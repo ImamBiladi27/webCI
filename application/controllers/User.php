@@ -40,4 +40,9 @@ class User extends CI_Controller
 			redirect('user/add');
 		}
 	}
+	public function show()
+{
+	$data['users'] = $this->model->get_all_data($this->table);
+	$this->load->view('user_show', $data);
+}
 }
